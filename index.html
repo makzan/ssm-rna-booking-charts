@@ -8,6 +8,13 @@
       font-family:  sans-serif;
       font-size:  1.2em;
     }
+    footer {
+      font-size:  1rem;
+      padding-top:  1em;
+    }
+    footer p {
+      margin:  0;
+    }
   </style>
 </head>
 <body>
@@ -196,10 +203,12 @@
       <li><a href="2021-08-07-鮑思高粵華小學.png">鮑思高粵華小學</a></li>
     </ol>
   </details>
-  <p>
-    資料來源：<a href="https://www.ssm.gov.mo/docs/stat/apt/RNA010.xlsx">澳門衛生局 Excel</a>
-  </p>
-  <p>更新於：<span id="updated-at"></span></p>
+  <footer>
+    <p>
+      資料來源：<a href="https://www.ssm.gov.mo/docs/stat/apt/RNA010.xlsx">澳門衛生局 Excel</a>
+    </p>
+    <p>更新於：<span id="updated-at"></span></p>
+  </footer>
   <script>
     fetch("./updated_at.json")
       .then(res => res.json())
