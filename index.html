@@ -203,16 +203,34 @@
       <li><a href="2021-08-07-鮑思高粵華小學.png">鮑思高粵華小學</a></li>
     </ol>
   </details>
+
+  <p>
+    民防中心最新輪候人數列表：
+    <a id="status-pdf"></a>
+  </p>
+
   <footer>
     <p>
       資料來源：<a href="https://www.ssm.gov.mo/docs/stat/apt/RNA010.xlsx">澳門衛生局 Excel</a>
     </p>
     <p>更新於：<span id="updated-at"></span></p>
   </footer>
+  <script src="strftime.js"></script>
   <script>
+    let timestamp = strftime("%Y%m%d%H");
+    let filename = `TC${timestamp}00.pdf`;
+    let pdf_url = `http://www.spu.gov.mo/uploadfile/scs/${filename}`
+
+    document.getElementById("status-pdf").textContent = pdf_url;
+    document.getElementById("status-pdf").href = pdf_url;
+
+
     fetch("./updated_at.json")
       .then(res => res.json())
       .then(data => document.getElementById("updated-at").textContent=data['updated_at']);
+
+
+
   </script>
 </body>
 </html>
